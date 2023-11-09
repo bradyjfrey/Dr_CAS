@@ -1,4 +1,4 @@
-/* Josh W Comeau's CSS Reset, condensed joshwcomeau.com */
+/*** Josh W Comeau's CSS Reset ala joshwcomeau.com, but heavily modified for my preferences - Brady Frey bradyjfrey.com ***/
 *, *::before, *::after {box-sizing: border-box;}
 * {margin: 0;padding: 0;}
 body {line-height: 1.5;-webkit-font-smoothing: antialiased;text-align: center;}
@@ -7,7 +7,7 @@ input, button, textarea, select {font: inherit;}
 p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
 #root, #__next {isolation: isolate;}
 
-/* Sebastiano Guerriero Typography System */
+/* Sebastiano Guerriero Typography System utilizing Hoefler&Co's beautiful typography */
 :root {
     --font-primary: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
     --font-secondary: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
@@ -113,7 +113,7 @@ b, strong {
         text-decoration: underline;
     }
 }
-/* utility classes */
+/*** utility classes ***/
 .truncate {
     // truncate text if it exceeds parent
     overflow: hidden;
@@ -126,7 +126,7 @@ header nav, .poster section, .latestpub section, .rtitle section, .recentmedia a
     margin: 0px auto;
 }
 
-/* Grid navbar */
+/*** Navbar ***/
 header {
     background: black;
     color: white;
@@ -164,7 +164,7 @@ nav li a {
     color: white;
 }
 
-/* Home Poster */
+/*** Home Poster ***/
 .poster {
     color: white;
     background-color: black;
@@ -203,7 +203,7 @@ nav li a {
     max-width: 26rem;
 }
 
-/* Main Pitch */
+/*** Main Pitch ***/
 .latestpub {
     background: white;
     color: black;
@@ -282,7 +282,7 @@ nav li a {
 }
 
 
-/* Latest Publications */
+/*** Latest Publications ***/
 .rtitle {
     background: #71adb0;
     color: white;

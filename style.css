@@ -150,11 +150,12 @@ nav li {
 }
 nav li a {
     display: block;
-    padding: 1em 1em;
+    padding: 0.5em;
     color: #71adb0;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
+    font-size: 1.5em;
 }
 .home {
     flex-grow: 2;
@@ -342,7 +343,7 @@ nav li a {
     background: #1b2948;
 }
 footer {
-    background-color: #2d4475;
+    background-color: black;
     color: #4866a5;
 }
 footer p {

@@ -359,7 +359,7 @@ footer p {
     nav li a {
         display: block;
         padding: 0.5em;
-        font-size: 0.75em;
+        font-size: 0.95em;
     }
     .poster section {
         padding: 18em 1em 1em 1em;
@@ -387,7 +387,9 @@ footer p {
         display: block;
         align-items: start;
     }
-
+    footer p {
+        font-size: 0.5em;
+    }
 }
 
 

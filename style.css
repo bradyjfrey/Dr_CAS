@@ -120,7 +120,7 @@ b, strong {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-header nav, .poster section, .latestpub section, .rtitle section, .recentmedia article a div {
+header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a div {
     max-width: 60em;
     text-align: left;
     margin: 0px auto;
@@ -203,28 +203,27 @@ nav li a {
     max-width: 26rem;
 }
 
+
 /*** Main Pitch ***/
 .latestpub {
     background: white;
     color: black;
-}
-.latestpub section {
     display: grid;
     padding: 1em 0;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 12fr;
     justify-items: end;
     align-items: top;
 }
 .latestpub article {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 13;
     position: relative;
     right: 1em;
 }
 .image_wrapper {
     width: 17rem;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 4;
     position: relative;
     right: 3em;
 }
@@ -366,9 +365,7 @@ footer p {
         background-position: top right;
         background-size: contain;
     }
-    .latestpub section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .latestpub {
         justify-items: stretch;
         align-items: top;
     }
@@ -376,7 +373,7 @@ footer p {
         width: 10em;
         position: relative;
         right: 1.5em;
-        top: 2em;
+        top: 0.3em;
     }
     .latestpub article {
         right: 1em;
@@ -387,6 +384,9 @@ footer p {
     }
     footer p {
         font-size: 0.5em;
+    }
+    .home {
+        flex-grow: 1;
     }
 }
 

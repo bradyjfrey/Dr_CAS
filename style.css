@@ -154,7 +154,7 @@ nav li a {
     color: #71adb0;
     text-decoration: none;
     text-transform: uppercase;
-    font: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
+    font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
 }
 .home {
     flex-grow: 2;
@@ -250,6 +250,7 @@ nav li a {
     text-transform: uppercase;
     box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
     text-decoration: none;
+    font-weight: 700;
 }
 .bbutton:hover {
     background: white;
@@ -259,6 +260,7 @@ nav li a {
     font-size: 1.5em;
     border-bottom: 1px solid rgb(0,0,0,0.20);
     padding: 0.25em 0;
+    font-weight: 400;
 }
 .latestpub p {
     padding: 0.5em 0;
@@ -310,6 +312,7 @@ nav li a {
 .recentmedia h4 {
     font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
     font-size: 1.5em;
+    font-weight: 400;
 }
 .recentmedia p {
     font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;

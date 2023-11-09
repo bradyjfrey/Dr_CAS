@@ -386,7 +386,7 @@ footer p {
         font-size: 0.5em;
     }
     .home {
-        flex-grow: 1;
+        flex-grow: none;
     }
 }
 

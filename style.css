@@ -356,7 +356,7 @@ footer p {
 /*** Accommodate Unique Screen Layouts ***/
 @media only screen and (max-device-width: 480px) {
     nav li a {
-        font-size: 1.2em;
+        font-size: 1.25em;
     }
     .poster section {
         padding: 18em 1em 1em 1em;

@@ -159,7 +159,7 @@ nav li a {
 .home {
     flex-grow: 2;
 }
-#current {
+#current, nav li a:hover {
     color: white;
 }
 
@@ -251,6 +251,10 @@ nav li a {
     box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
     text-decoration: none;
 }
+.bbutton:hover {
+    background: white;
+    color: black;
+}
 .latestpub h3 {
     font-size: 1.5em;
     border-bottom: 1px solid rgb(0,0,0,0.20);
@@ -300,8 +304,8 @@ nav li a {
     display: block;
 }
 .recentmedia a:hover {
-    background: white;
-    color: #2d4475;
+    background: #131c32;
+    color: #e8dec8;
 }
 .recentmedia h4 {
     font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;

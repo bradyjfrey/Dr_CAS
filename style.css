@@ -354,7 +354,41 @@ footer p {
 }
 
 
+/*** Accommodate Unique Screen Layouts ***/
+@media only screen and (max-device-width: 480px) {
+    nav li a {
+        display: block;
+        padding: 0.5em;
+        font-size: 0.75em;
+    }
+    .poster section {
+        padding: 18em 1em 1em 1em;
+        background-image: url(images/drcas.jpg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: contain;
+    }
+    .latestpub section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+        align-items: top;
+    }
+    .image_wrapper {
+        width: 10em;
+        position: relative;
+        right: 1.5em;
+        top: 2em;
+    }
+    .latestpub article {
+        right: 1em;
+    }
+    .latestpub ul {
+        display: block;
+        align-items: start;
+    }
 
+}
 
 
 

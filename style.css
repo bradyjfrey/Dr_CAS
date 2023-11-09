@@ -2,7 +2,7 @@
 *, *::before, *::after {box-sizing: border-box;}
 * {margin: 0;padding: 0;}
 body {line-height: 1.5;-webkit-font-smoothing: antialiased;text-align: center;}
-img, picture, video, canvas, svg {display: block;max-width: 100%;}
+img, picture, video, canvas, svg {display: block;max-width: 100%;height: auto;}
 input, button, textarea, select {font: inherit;}
 p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
 #root, #__next {isolation: isolate;}
@@ -11,7 +11,7 @@ p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
 :root {
     --font-primary: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
     --font-secondary: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
-    --font-tertiary: "Gotham A", "Gotham B" helvetica, arial, sans-serif;
+    --font-tertiary: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
 
     /* set base values */
     --text-base-size: 1em;
@@ -45,7 +45,6 @@ h1, h2, h3, h4, form legend {
     color: var(--color-text-heading);
     margin-bottom: var(--space-xxs);
     line-height: var(--heading-line-height);
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
 }
 /* text size */
 .text--xxxl {
@@ -56,7 +55,7 @@ h2, .text--xl {
 }
 h3, .text--lg {
     font-size: var(--text-lg);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
 }
 p span, p a, main li a {
     font-family: var(--font-secondary);
@@ -121,32 +120,230 @@ b, strong {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-header {background: black;color: white}
-.poster {
-    min-height: 40em;
-    background: no-repeat black url(images/drcas.jpg) center/80%
-    ;color: white}
-.latestpub {background: white;color: black;}
-header nav, .poster section, .latestpub section, .rtitle h2, .rnews article {
+header nav, .poster section, .latestpub section, .rtitle section, .recentmedia article a div {
     max-width: 60em;
     text-align: left;
     margin: 0px auto;
-    padding: 0 20px;
-    display: grid;
 }
 
-.poster h1 {width: 30rem;}
-.image_wrapper {width: 17rem}
+/* Grid navbar */
+header {
+    background: black;
+    color: white;
+    box-shadow: 0 0 1.5em black;
+    z-index: 10;
+    position: relative
+}
+nav {}
+nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+nav li {
+    list-style: none;
+    display: inline-block;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+}
+nav li a {
+    display: block;
+    padding: 1em 1em;
+    color: #71adb0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
+}
+.home {
+    flex-grow: 2;
+}
+#current {
+    color: white;
+}
 
-.recentmedia {}
-.rtitle {background: #71adb0;color: white}
-.rnews {background: #2d4475;color: white}
+/* Home Poster */
+.poster {
+    color: white;
+    background-color: black;
+   
+}
+.poster section {
+    padding: 6em 1em;
+    background-image: url(images/drcas.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+}
+.poster p {
+    width: 22rem;
+}
+.poster ul {
+    width: 22rem;
+    padding: 1em 0 0 1em;
+}
+.poster li {
+    list-style-type: circle;
+    padding: 0.2em 0;
+}
+.poster li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.15em 0.2em;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.poster li a:hover {
+    background-color: white;
+    color: black;
+}
+.poster h1 {
+    max-width: 26rem;
+}
+
+/* Main Pitch */
+.latestpub {
+    background: white;
+    color: black;
+}
+.latestpub section {
+    display: grid;
+    padding: 1em 0;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    align-items: top;
+}
+.latestpub article {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    position: relative;
+    right: 1em;
+}
+.image_wrapper {
+    width: 17rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    position: relative;
+    right: 3em;
+}
+.attention {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    color: #e8dec8;
+    margin-top: 1.5em;
+    padding: 0.15em 0.5em;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #910000;
+    text-transform: uppercase;
+    box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+}
+.bbutton {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    color: #e8dec8;
+    margin-top: 1em;
+    padding: 0.15em 0.5em;
+    font-size: 0.67em;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: black;
+    text-transform: uppercase;
+    box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+.latestpub h3 {
+    font-size: 1.5em;
+    border-bottom: 1px solid rgb(0,0,0,0.20);
+    padding: 0.25em 0;
+}
+.latestpub p {
+    padding: 0.5em 0;
+}
+.call2a {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.67em;
+    padding: 1.5em 0 0 0;
+}
+.latestpub ul {
+    display: flex;
+    align-items: start;
+}
+.latestpub ul li {
+    list-style: none;
+    padding-right: 1em;
+}
 
 
-
-
-
+/* Latest Publications */
+.rtitle {
+    background: #71adb0;
+    color: white;
+}
+.rtitle h2 {
+    padding: 0.5em .75em;
+    font-size: 1.5em;
+    font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+}
+.recentmedia {
+    background: #2d4475;
+    color: white;
+}
+.recentmedia article div {
+    padding: 0 1em;
+}
+.recentmedia a {
+    color: white;
+    text-decoration: none;
+    padding: 1em 0;
+    display: block;
+}
+.recentmedia a:hover {
+    background: white;
+    color: #2d4475;
+}
+.recentmedia h4 {
+    font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
+    font-size: 1.5em;
+}
+.recentmedia p {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    padding-top: 0.75em;
+}
+.recentmedia article:nth-child(1) {
+    background: #2d4475;
+}
+.recentmedia article:nth-child(2n) {
+    background: #283d69;
+}
+.recentmedia article:nth-child(3n) {
+    background: #263a64;
+}
+.recentmedia article:nth-child(4n) {
+    background: #24365e;
+}
+.recentmedia article:nth-child(5n) {
+    background: #223358;
+}
+.recentmedia article:nth-child(6n) {
+    background: #1f2f52;
+}
+.recentmedia article:nth-child(7n) {
+    background: #1b2948;
+}
+footer {
+    background-color: #2d4475;
+    color: #4866a5;
+}
+footer p {
+    font-size: 0.75em;
+    padding: 1em 0;
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+}
 
 
 

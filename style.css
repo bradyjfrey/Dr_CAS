@@ -120,7 +120,7 @@ b, strong {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a div {
+header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a div, .recentpub section {
     max-width: 60em;
     text-align: left;
     margin: 0px auto;
@@ -171,7 +171,7 @@ nav li a {
    
 }
 .poster section {
-    padding: 8em 1em;
+    padding: 8em 1em 0em 1em;
     background-image: url(images/drcas.jpg);
     background-repeat: no-repeat;
     background-position: center right;
@@ -201,6 +201,21 @@ nav li a {
 }
 .poster h1 {
     max-width: 26rem;
+}
+#photoc {
+    font-size: 0.75em;
+    text-align: right;
+    padding: 7.5em 0 0.25em 0;
+    width: 100%;
+}
+#photoc a {
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+    text-shadow: 0 0 0.5em black;
+}
+#photoc a:hover {
+    opacity: 1;
 }
 
 
@@ -256,13 +271,13 @@ nav li a {
     background: white;
     color: black;
 }
-.latestpub h3 {
+.latestpub h3, .recentpub h3 {
     font-size: 1.5em;
     border-bottom: 1px solid rgb(0,0,0,0.20);
     padding: 0.25em 0;
     font-weight: 400;
 }
-.latestpub p {
+.latestpub p, .recentpub p {
     padding: 0.5em 0;
 }
 .call2a {
@@ -271,11 +286,11 @@ nav li a {
     font-size: 0.67em;
     padding: 1.5em 0 0 0;
 }
-.latestpub ul {
+.blists {
     display: flex;
     align-items: start;
 }
-.latestpub ul li {
+.blists li {
     list-style: none;
     padding-right: 1em;
 }
@@ -352,6 +367,65 @@ footer p {
     text-transform: uppercase;
 }
 
+
+/*** Book Publications ***/
+#publicpage header {
+    background-color: #1f2f3c;
+    box-shadow: 0 0 0.3em black;
+}
+#publicpage nav li a {
+    padding: 0.5em;
+    color: white;
+    opacity: 0.25;
+}
+#publicpage #current, #publicpage nav li a:hover {
+    opacity: 1;
+}
+#publicpage .rtitle {
+    background-color: #b4a999;
+}
+#publicpage .latestpub {
+    padding-top: 4em;
+}
+.bookentry {
+    list-style-type: none;
+}
+.bookentry section {
+    color: black;
+    display: grid;
+    padding: 1em 0;
+    grid-template-columns: 12fr;
+    justify-items: end;
+    align-items: top;
+    list-style-type: none;
+}
+.bookentry article {
+    grid-column-start: 4;
+    grid-column-end: 13;
+    position: relative;
+    right: 1em;
+}
+.recentpub li:nth-of-type(even) {
+    background: #999082;
+}
+.recentpub li:nth-of-type(odd) {
+    background: #a29889;
+}
+.recentpub:nth-child(3n) {
+    background: #999082;
+}
+.recentpub:nth-child(4n) {
+    background: #24365e;
+}
+.recentpub:nth-child(5n) {
+    background: #223358;
+}
+.recentpub:nth-child(6n) {
+    background: #1f2f52;
+}
+.recentpub:nth-child(7n) {
+    background: #1b2948;
+}
 
 /*** Accommodate Unique Screen Layouts ***/
 @media only screen and (max-device-width: 480px) {

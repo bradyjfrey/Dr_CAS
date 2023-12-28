@@ -505,6 +505,9 @@ footer p {
     background-color: #924839;
     box-shadow: 0 0 0.3em black;
 }
+.publicphilo header {
+    background-color: #3c7f91 !important;
+}
 #writing nav li a {
     padding: 0.5em;
     color: white;
@@ -516,6 +519,9 @@ footer p {
 #writing .rtitle {
     background: #a49e93;
     color: white;
+}
+.publicphilo .rtitle {
+    background: #b4a99a !important;
 }
 #writing .rtitle h2 {
     padding: 0.5em .75em;

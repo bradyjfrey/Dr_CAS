@@ -465,7 +465,6 @@ footer p {
 }
 .cv dl {
   padding: 0 1.5em;
-  
 }
 .cv dt {
    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
@@ -478,6 +477,18 @@ footer p {
 .cv dd {
     display: list-item;
     list-style-type: disc;
+}
+.cv li a, .cv dl dd a {
+    color: #2d4475;
+    text-decoration: none;
+    border-bottom: 1px solid #2d4475;
+    padding: .1em .25em;
+}
+.cv li a:hover, .cv dl dd a:hover {
+    background-color: #2d4475;
+    border-radius: .25em;
+    border: none;
+    color: white;
 }
 
 /*** Accommodate Unique Screen Layouts ***/

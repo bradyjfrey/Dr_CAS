@@ -453,7 +453,7 @@ footer p {
     border-bottom: 1px solid rgb(0,0,0,0.20);
 }
 .cv li, .cv dl dd {
-    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    font-family: var(--font-primary);
     font-size: 1em;
     padding-bottom: 0.25em;
 }
@@ -489,6 +489,12 @@ footer p {
     border-radius: .25em;
     border: none;
     color: white;
+}
+.cv strong {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    padding-top: 0.75em;
 }
 
 /*** Accommodate Unique Screen Layouts ***/

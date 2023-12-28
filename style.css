@@ -337,7 +337,7 @@ nav a {
 .image_wrapper {
     width: 17rem;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 2;
     position: relative;
     right: 3em;
 }

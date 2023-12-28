@@ -141,7 +141,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .top-nav {
   display: flex;

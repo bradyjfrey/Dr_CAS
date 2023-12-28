@@ -611,7 +611,7 @@ footer p {
     .latestpub article {
         right: 1em;
     }
-    .latestpub ul {
+    .latestpub ul, .bookentry .blists {
         display: block;
         align-items: start;
     }
@@ -621,5 +621,8 @@ footer p {
     .home {
         flex-grow: none;
     }
+    #photoc {
+      padding: 1.5em 0 0.25em 0;
+  }
 }
 

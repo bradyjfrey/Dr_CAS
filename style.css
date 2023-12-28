@@ -126,7 +126,7 @@ header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a
     margin: 0px auto;
 }
 
-/*** Navbar ***/
+/*** Navbar with Mobile Hamburger ***/
 header {
     background: black;
     color: white;
@@ -134,34 +134,133 @@ header {
     z-index: 10;
     position: relative
 }
-nav {}
-nav ul {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-nav li {
-    list-style: none;
-    display: inline-block;
-    width: auto;
-    justify-self: center;
-    align-self: center;
-}
-nav li a {
+nav a {
     display: block;
     padding: 0.5em;
     color: #71adb0;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
 }
-.home {
-    flex-grow: 2;
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFF;
+  height: 60px;
+  padding: 1em;
 }
-#current, nav li a:hover {
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#menu-toggle {
+  display: none;
+}
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 300ms cubic-bezier(0.23, 0.1, 0.32, 0.1);
+  border-radius: 2px;
+}
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(135deg);
+}
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-135deg);
+}
+@media (max-width: 760px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 60px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.25em 0.25em rgba(0,0,0,0.75);
+    z-index: 1;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 2.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
     color: white;
+    background-color: black;
+  }
+  #publicpage .menu > li {
+    background-color: #1f2f3c;
+  }
+  #writing .menu > li {
+    background-color: #924839;
+  }
+  .publicphilo .menu > li {
+      background-color: #3c7f91 !important;
+  }
+  #cvpage .menu > li {
+      background-color: #2d4475;
+  }
+  .menu > li a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#current, nav li a:hover {
+  color: white;
 }
 
 /*** Home Poster ***/
@@ -373,12 +472,12 @@ footer p {
     background-color: #1f2f3c;
     box-shadow: 0 0 0.3em black;
 }
-#publicpage nav li a {
+#publicpage nav li a, #publicpage .homel a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#publicpage #current, #publicpage nav li a:hover {
+#publicpage #current, #publicpage nav li a:hover, #publicpage .homel a:hover {
     opacity: 1;
 }
 #publicpage .rtitle {
@@ -432,12 +531,12 @@ footer p {
     background-color: #2d4475;
     box-shadow: 0 0 0.3em black;
 }
-#cvpage nav li a {
+#cvpage nav li a, #cvpage .homel a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#cvpage #current, #cvpage nav li a:hover {
+#cvpage #current, #cvpage nav li a:hover, #cvpage .homel a:hover {
     opacity: 1;
 }
 .cv section {
@@ -511,12 +610,12 @@ footer p {
 .publicphilo header {
     background-color: #3c7f91 !important;
 }
-#writing nav li a {
+#writing nav li a, #writing .homel a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#writing #current, #cvpage nav li a:hover {
+#writing #current, #writing nav li a:hover, #writing .homel a:hover {
     opacity: 1;
 }
 #writing .rtitle {

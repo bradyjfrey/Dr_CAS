@@ -712,7 +712,9 @@ footer p {
     .latestpub {
         justify-items: stretch;
         align-items: top;
-        padding-top: 2em;
+    }
+    #publicpage .latestpub {
+      padding-top: 2em;
     }
     .image_wrapper {
         width: 10em;

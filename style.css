@@ -141,7 +141,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Tungsten A", "Tungsten B", helvetica, arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 .top-nav {
   display: flex;
@@ -229,7 +229,7 @@ nav a {
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   #menu-toggle:checked ~ .menu li {
-    height: 2.5em;
+    height: 3.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .menu > li {
@@ -472,12 +472,16 @@ footer p {
     background-color: #1f2f3c;
     box-shadow: 0 0 0.3em black;
 }
-#publicpage nav li a, #publicpage .homel a {
+#publicpage nav li a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#publicpage #current, #publicpage nav li a:hover, #publicpage .homel a:hover {
+#publicpage .homel a {
+  padding: 0.5em;
+  color: white;
+}
+#publicpage #current, #publicpage nav li a:hover {
     opacity: 1;
 }
 #publicpage .rtitle {
@@ -531,12 +535,16 @@ footer p {
     background-color: #2d4475;
     box-shadow: 0 0 0.3em black;
 }
-#cvpage nav li a, #cvpage .homel a {
+#cvpage nav li a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#cvpage #current, #cvpage nav li a:hover, #cvpage .homel a:hover {
+#cvpage .homel a {
+    padding: 0.5em;
+    color: white;
+}
+#cvpage #current, #cvpage nav li a:hover {
     opacity: 1;
 }
 .cv section {
@@ -610,12 +618,16 @@ footer p {
 .publicphilo header {
     background-color: #3c7f91 !important;
 }
-#writing nav li a, #writing .homel a {
+#writing nav li a {
     padding: 0.5em;
     color: white;
     opacity: 0.25;
 }
-#writing #current, #writing nav li a:hover, #writing .homel a:hover {
+#writing .homel a {
+    padding: 0.5em;
+    color: white;
+}
+#writing #current, #writing nav li a:hover {
     opacity: 1;
 }
 #writing .rtitle {

@@ -501,6 +501,9 @@ footer p {
     background: none;
     padding: 5em 1em;
 }
+#writing .poster p {
+    width: auto;
+}
 #writing header {
     background-color: #924839;
     box-shadow: 0 0 0.3em black;
@@ -546,6 +549,9 @@ footer p {
 #writing .recentmedia a:hover {
     background: #3a2025;
     color: #e8dec8;
+}
+.publicphilo .recentmedia a:hover {
+    background: #2d4475 !important;
 }
 #writing .recentmedia h4 {
     font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;

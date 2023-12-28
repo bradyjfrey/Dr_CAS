@@ -256,9 +256,9 @@ nav a {
   .menu > li a {
     width: 100%;
     text-align: center;
+    font-size: 1.7em;
   }
 }
-
 #current, nav li a:hover {
   color: white;
 }

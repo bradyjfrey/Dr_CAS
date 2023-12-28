@@ -358,7 +358,7 @@ nav li a {
 }
 footer {
     background-color: black;
-    color: #4866a5;
+    color: #676767;
 }
 footer p {
     font-size: 0.75em;
@@ -441,7 +441,7 @@ footer p {
     opacity: 1;
 }
 .cv section {
-    padding: 0 0 2em 0;
+    padding: 0 1em 2em 1em;
 }
 .cv h2 {
     font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
@@ -450,7 +450,7 @@ footer p {
     font-weight: 700;
     padding: 1.5em 0 .25em 0;
     margin-bottom: .25em;
-    border-bottom: 1px dotted #71adb0;
+    border-bottom: 1px solid rgb(0,0,0,0.20);
 }
 .cv li, .cv dl dd {
     font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;

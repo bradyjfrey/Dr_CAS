@@ -120,7 +120,7 @@ b, strong {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a div, .recentpub section {
+header nav, .poster section, .latestpub, .rtitle section, .recentmedia article a div, .recentpub section, .cv section {
     max-width: 60em;
     text-align: left;
     margin: 0px auto;
@@ -405,10 +405,10 @@ footer p {
     position: relative;
     right: 1em;
 }
-.recentpub li:nth-of-type(even) {
+.recentpub .bookentry:nth-of-type(even) {
     background: #999082;
 }
-.recentpub li:nth-of-type(odd) {
+.recentpub .bookentry:nth-of-type(odd) {
     background: #a29889;
 }
 .recentpub:nth-child(3n) {
@@ -425,6 +425,59 @@ footer p {
 }
 .recentpub:nth-child(7n) {
     background: #1b2948;
+}
+
+/*** CV ***/
+#cvpage header {
+    background-color: #2d4475;
+    box-shadow: 0 0 0.3em black;
+}
+#cvpage nav li a {
+    padding: 0.5em;
+    color: white;
+    opacity: 0.25;
+}
+#cvpage #current, #cvpage nav li a:hover {
+    opacity: 1;
+}
+.cv section {
+    padding: 0 0 2em 0;
+}
+.cv h2 {
+    font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
+    color: #2d4475;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 1.5em 0 .25em 0;
+    margin-bottom: .25em;
+    border-bottom: 1px dotted #71adb0;
+}
+.cv li, .cv dl dd {
+    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    font-size: 1em;
+    padding-bottom: 0.25em;
+}
+.cv ul {
+    padding: 0 1.5em;
+}
+.cv ol {
+    padding: 0 1.5em;
+}
+.cv dl {
+  padding: 0 1.5em;
+  
+}
+.cv dt {
+   font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+   font-size: 1em;
+   padding-top: 1em;
+   font-weight: 700;
+   text-transform: uppercase;
+
+}
+.cv dd {
+    display: list-item;
+    list-style-type: disc;
 }
 
 /*** Accommodate Unique Screen Layouts ***/
@@ -463,8 +516,4 @@ footer p {
         flex-grow: none;
     }
 }
-
-
-
-
 

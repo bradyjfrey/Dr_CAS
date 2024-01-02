@@ -697,6 +697,12 @@ footer p {
     background: white;
 }
 
+.error {
+  font-family: "Mercury Text G1 A", "Mercury Text G1 B", georgia, times, serif;
+  font-size: 2em;
+  font-weight: 400;
+  padding-bottom: .5em;
+}
 /*** Accommodate Unique Screen Layouts ***/
 @media only screen and (max-device-width: 480px) {
     nav li a {

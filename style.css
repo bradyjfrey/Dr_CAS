@@ -30,12 +30,6 @@ p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
     --heading-line-height: 1.2;
     --body-line-height: 1.4;
 }
-@include breakpoint(md) {
-    :root {
-        --text-base-size: 1em;
-        --text-scale-ratio: 1.25;
-    }
-}
 body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
@@ -115,7 +109,6 @@ b, strong {
 }
 /*** utility classes ***/
 .truncate {
-    // truncate text if it exceeds parent
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -132,7 +125,7 @@ header {
     color: white;
     box-shadow: 0 0 1.5em black;
     z-index: 10;
-    position: relative
+    position: relative;
 }
 nav a {
     display: block;
@@ -326,7 +319,7 @@ nav a {
     padding: 1em 0;
     grid-template-columns: 12fr;
     justify-items: end;
-    align-items: top;
+    align-items: start;
 }
 .latestpub article {
     grid-column-start: 4;
@@ -343,6 +336,8 @@ nav a {
 }
 .attention {
     font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
+    font-size: 0.67em;
+    font-weight: 700;
     color: #e8dec8;
     margin-top: 1.5em;
     padding: 0.15em 0.5em;
@@ -499,7 +494,7 @@ footer p {
     padding: 1em 0;
     grid-template-columns: 12fr;
     justify-items: end;
-    align-items: top;
+    align-items: start;
     list-style-type: none;
 }
 .bookentry article {
@@ -704,7 +699,7 @@ footer p {
   padding-bottom: .5em;
 }
 /*** Accommodate Unique Screen Layouts ***/
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     nav li a {
         font-size: 1.3em;
     }
@@ -717,7 +712,7 @@ footer p {
     }
     .latestpub {
         justify-items: stretch;
-        align-items: top;
+        align-items: start;
     }
     #publicpage .latestpub {
       padding-top: 1em;
@@ -738,10 +733,7 @@ footer p {
     footer p {
         font-size: 0.5em;
     }
-    .home {
-        flex-grow: none;
-    }
-    #photoc {
+#photoc {
       padding: 1.5em 0 0.25em 0;
   }
 }

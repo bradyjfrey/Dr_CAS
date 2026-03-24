@@ -317,12 +317,12 @@ nav a {
     color: black;
     display: grid;
     padding: 1em 0;
-    grid-template-columns: 12fr;
+    grid-template-columns: repeat(12, 1fr);
     justify-items: end;
     align-items: start;
 }
 .latestpub article {
-    grid-column-start: 4;
+    grid-column-start: 2;
     grid-column-end: 13;
     position: relative;
     right: 1em;
@@ -492,13 +492,13 @@ footer p {
     color: black;
     display: grid;
     padding: 1em 0;
-    grid-template-columns: 12fr;
+    grid-template-columns: repeat(12, 1fr);
     justify-items: end;
     align-items: start;
     list-style-type: none;
 }
 .bookentry article {
-    grid-column-start: 4;
+    grid-column-start: 2;
     grid-column-end: 13;
     position: relative;
     right: 1em;

@@ -6,6 +6,12 @@ publish = "_site"
 NODE_VERSION = "22"
 
 [[redirects]]
+from = "/admin"
+to = "https://app.pagescms.org/bradyjfrey/dr_cas/main"
+status = 302
+force = true
+
+[[redirects]]
 from = "/*"
 to = "/error.html"
 status = 404

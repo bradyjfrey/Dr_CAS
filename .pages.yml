@@ -1,0 +1,221 @@
+media:
+  - name: covers
+    label: Book covers
+    input: images/books
+    output: /images/books
+    categories: [image]
+    rename: safe
+
+content:
+  - name: site
+    label: Home page
+    type: file
+    path: content/site.yml
+    format: yaml
+    operations:
+      delete: false
+    fields:
+      - name: intro
+        label: Introduction
+        description: Shown at the top of the home page and the CV page.
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: email
+        label: Email address
+        type: string
+      - name: links
+        label: Links under the introduction
+        type: object
+        list:
+          collapsible:
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Link text
+            type: string
+            required: true
+          - name: url
+            label: Web address
+            type: string
+            required: true
+      - name: photo_credit
+        label: Photo credit
+        type: object
+        fields:
+          - name: label
+            label: Photographer
+            type: string
+          - name: url
+            label: Web address
+            type: string
+      - name: featured_book
+        label: Featured book
+        description: This book is shown large on the home page and at the top of the Books page.
+        type: reference
+        options:
+          collection: books
+          search: "title"
+          value: "{name}"
+          label: "{title}"
+      - name: featured_label
+        label: Featured book label
+        description: The small tag above the featured book title, for example "New Publication".
+        type: string
+      - name: academic_intro
+        label: Academic Writing page introduction
+        type: string
+      - name: public_intro
+        label: Public Philosophy page introduction
+        type: string
+
+  - name: books
+    label: Books
+    type: collection
+    path: content/books
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, year]
+      primary: title
+      sort: [year, title]
+      default:
+        sort: year
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: year
+        label: Year published
+        description: Books are listed newest first.
+        type: number
+        required: true
+      - name: cover
+        label: Cover image
+        type: image
+        options:
+          media: covers
+      - name: body
+        label: Description
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: links
+        label: Where to get the book
+        type: object
+        list:
+          collapsible:
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Store or publisher name
+            type: string
+            required: true
+          - name: url
+            label: Web address
+            type: string
+            required: true
+
+  - name: academic
+    label: Academic Writing
+    type: collection
+    path: content/academic
+    format: yaml
+    filename: "{primary}.yml"
+    view:
+      fields: [title, year]
+      primary: title
+      sort: [year, title]
+      default:
+        sort: year
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        description: Include the quotation marks if you want them shown.
+        type: string
+        required: true
+      - name: year
+        label: Year
+        description: Entries are listed newest first.
+        type: number
+        required: true
+      - name: citation
+        label: Publication details
+        description: Journal or book, volume, pages.
+        type: text
+      - name: url
+        label: Web address
+        type: string
+        required: true
+
+  - name: media
+    label: Public Philosophy
+    type: collection
+    path: content/media
+    format: yaml
+    filename: "{primary}.yml"
+    view:
+      fields: [title, kind, date, home]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: kind
+        label: Type
+        type: select
+        required: true
+        options:
+          values: [Read, Watch, Listen]
+      - name: source
+        label: Source and date shown
+        description: For example "Latino Rebels, OpEd, Jan 27, 2021".
+        type: string
+      - name: url
+        label: Web address
+        type: string
+        required: true
+      - name: date
+        label: Date
+        description: Used only to order the list, newest first.
+        type: date
+      - name: home
+        label: Show on the home page under Recent Media
+        type: boolean
+      - name: pinned
+        label: Keep at the top of the Public Philosophy page
+        type: boolean
+
+  - name: cv
+    label: CV
+    type: file
+    path: content/cv.md
+    format: yaml-frontmatter
+    operations:
+      delete: false
+    fields:
+      - name: body
+        label: Curriculum Vitae
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "content: create {path}"
+      update: "content: update {path}"
+      delete: "content: delete {path}"
+      rename: "content: rename {oldPath} to {newPath}"

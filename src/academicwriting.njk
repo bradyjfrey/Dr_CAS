@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+permalink: academicwriting.html
+current: academic
+bodyId: writing
+title: Dr. Carlos Alberto Sánchez's Academic Writing
+description: Academic publications by Dr. Carlos Alberto Sánchez on Mexican philosophy, phenomenology, immigration, and existentialism.
+ogTitle: Academic Writing by Dr. Carlos Alberto Sánchez
+---
+{%- import "macros.njk" as ui -%}
+{{ ui.poster(site.academic_intro) }}
+{{ ui.heading("Academic Writing") }}
+    <div class="recentmedia">
+        {%- for item in academic %}
+        <article>
+            <a href="{{ item.url }}">
+                <div>
+                    <h4>{{ item.title }}</h4>
+                    <p><strong>{{ item.year }}</strong>, {{ item.citation }}</p>
+                </div>
+            </a>
+        </article>
+        {%- endfor %}
+    </div>

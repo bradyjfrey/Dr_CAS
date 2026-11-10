@@ -1,0 +1,29 @@
+---
+layout: layout.njk
+permalink: books.html
+current: books
+bodyId: publicpage
+title: Dr. Carlos Alberto Sánchez's Books
+description: Books by Dr. Carlos Alberto Sánchez, including Blooming in the Ruins, Mexican Philosophy for the 21st Century, A Sense of Brutality, and more.
+ogTitle: Books by Dr. Carlos Alberto Sánchez
+ogDescription: Published books by Dr. Carlos Alberto Sánchez, including Blooming in the Ruins, Mexican Philosophy for the 21st Century, A Sense of Brutality, and more.
+---
+{%- import "macros.njk" as ui -%}
+{{ ui.featuredBook(featured, site.featured_label) }}
+    <div class="rtitle">
+        <section>
+            <h2><img src="images/booksby.png" alt="Books by Dr. Carlos Alberto Sánchez"></h2>
+        </section>
+    </div>
+
+    <div class="recentpub">
+        <ul>
+            {%- for item in books %}
+            <li class="bookentry">
+                <section>
+                    {{ ui.book(item) }}
+                </section>
+            </li>
+            {%- endfor %}
+        </ul>
+    </div>

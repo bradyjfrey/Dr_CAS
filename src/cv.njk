@@ -1,0 +1,25 @@
+---
+layout: layout.njk
+permalink: cv.html
+current: cv
+bodyId: cvpage
+title: Dr. Carlos Alberto Sánchez's CV
+description: Curriculum vitae for Dr. Carlos Alberto Sánchez — education, publications, talks, editorial positions, and service at San José State University.
+ogTitle: CV — Dr. Carlos Alberto Sánchez
+---
+{%- import "macros.njk" as ui -%}
+    <div class="poster">
+        <section>
+            <h1><img src="images/logo.png" alt="Dr. Carlos Alberto Sánchez"></h1>
+            {{ site.intro | md | safe }}
+            {%- if site.photo_credit and site.photo_credit.label %}
+            <p id="photoc"><a href="{{ site.photo_credit.url }}">{{ site.photo_credit.label }}</a></p>
+            {%- endif %}
+        </section>
+    </div>
+{{ ui.heading("Curriculum Vitae") }}
+    <div class="cv">
+        <section>
+{{ cv | md | safe }}
+        </section>
+    </div>

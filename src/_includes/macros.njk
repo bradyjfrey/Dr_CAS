@@ -1,0 +1,54 @@
+{% macro book(item) %}
+        <aside class="image_wrapper">
+            <img src="{{ item.cover }}" alt="{{ item.title }} book cover">
+        </aside>
+        <article>
+            {{ caller() if caller }}
+            <h3>{{ item.title }}</h3>
+            {{ item.body | md | safe }}
+            {%- if item.links and item.links.length %}
+            <h5 class="call2a">Get the book:</h5>
+            <ul class="blists">
+                {%- for link in item.links %}
+                <li><a class="bbutton" href="{{ link.url }}">{{ link.label }}</a></li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+        </article>
+{% endmacro %}
+
+{% macro featuredBook(item, label) %}
+    {%- if item %}
+    <section class="latestpub">
+        {% call book(item) %}{% if label %}<span class="attention">{{ label }}</span>{% endif %}{% endcall %}
+    </section>
+    {%- endif %}
+{% endmacro %}
+
+{% macro mediaItem(item) %}
+        <article>
+            <a href="{{ item.url }}">
+                <div>
+                    <h4>{{ item.title }}</h4>
+                    <p><strong>{{ item.kind }}:</strong> {{ item.source }}</p>
+                </div>
+            </a>
+        </article>
+{% endmacro %}
+
+{% macro poster(text) %}
+    <div class="poster">
+        <section>
+            <h1><img src="images/logo.png" alt="Dr. Carlos Alberto Sánchez"></h1>
+            <p>{{ text }}</p>
+        </section>
+    </div>
+{% endmacro %}
+
+{% macro heading(text) %}
+    <div class="rtitle">
+        <section>
+            <h2>{{ text }}</h2>
+        </section>
+    </div>
+{% endmacro %}

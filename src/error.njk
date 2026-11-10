@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+permalink: error.html
+current: home
+bodyId: writing
+bodyClass: publicphilo
+title: Dr. Carlos Alberto Sánchez's Error page!
+description: Page not found — Dr. Carlos Alberto Sánchez’s website.
+---
+    <div class="poster">
+        <section>
+            <h2 class="error">Whoops! This is not what you were looking for!</h2>
+            <p>You've landed on a page that doesn't seem to exist on this website. If you think this was a mistake, email me below or view my other pages:</p>
+            <ul>
+                {%- if site.email %}
+                <li>Email me: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                {%- endif %}
+                <li><a href="books.html">Books</a></li>
+                <li><a href="academicwriting.html">Academic Writing</a></li>
+                <li><a href="publicphilosophy.html">Public Philosophy</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </section>
+    </div>

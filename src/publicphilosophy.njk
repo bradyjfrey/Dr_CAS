@@ -1,0 +1,16 @@
+---
+layout: layout.njk
+permalink: publicphilosophy.html
+current: public
+bodyId: writing
+bodyClass: publicphilo
+title: Dr. Carlos Alberto Sánchez's Public Philosophy
+description: Public philosophy media, op-eds, interviews, and talks by Dr. Carlos Alberto Sánchez.
+ogTitle: Public Philosophy by Dr. Carlos Alberto Sánchez
+---
+{%- import "macros.njk" as ui -%}
+{{ ui.poster(site.public_intro) }}
+{{ ui.heading("Public Philosophy") }}
+    <div class="recentmedia">
+        {%- for item in media %}{{ ui.mediaItem(item) }}{% endfor %}
+    </div>

@@ -554,7 +554,7 @@ footer p {
     margin-bottom: .25em;
     border-bottom: 1px solid rgb(0,0,0,0.20);
 }
-.cv li, .cv dl dd {
+.cv li {
     font-family: var(--font-primary);
     font-size: 1em;
     padding-bottom: 0.25em;
@@ -565,27 +565,20 @@ footer p {
 .cv ol {
     padding: 0 1.5em;
 }
-.cv dl {
-  padding: 0 1.5em;
-}
-.cv dt {
+.cv h3 {
    font-family: "Gotham A", "Gotham B", helvetica, arial, sans-serif;
    font-size: 1em;
-   padding-top: 1em;
+   padding: 1em 1.5em 0 1.5em;
    font-weight: 700;
    text-transform: uppercase;
 }
-.cv dd {
-    display: list-item;
-    list-style-type: disc;
-}
-.cv li a, .cv dl dd a {
+.cv li a {
     color: #2d4475;
     text-decoration: none;
     border-bottom: 1px solid #2d4475;
     padding: .1em .25em;
 }
-.cv li a:hover, .cv dl dd a:hover {
+.cv li a:hover {
     background-color: #2d4475;
     border-radius: .25em;
     border: none;

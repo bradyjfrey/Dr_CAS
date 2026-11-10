@@ -1,0 +1,32 @@
+---
+layout: layout.njk
+permalink: index.html
+current: home
+title: Dr. Carlos Alberto Sánchez
+description: Dr. Carlos Alberto Sánchez is a philosopher and professor at San José State University, Editor of the Journal of Mexican Philosophy, Director of the Center for Comparative Philosophy, and published author.
+ogTitle: Dr. Carlos Alberto Sánchez
+ogDescription: Philosopher and professor at San José State University, Editor of the Journal of Mexican Philosophy, Director of the Center for Comparative Philosophy, and published author.
+---
+{%- import "macros.njk" as ui -%}
+    <div class="poster">
+        <section>
+            <h1><img src="images/logo.png" alt="Dr. Carlos Alberto Sánchez"></h1>
+            {{ site.intro | md | safe }}
+            <ul>
+                {%- if site.email %}
+                <li>Email me: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                {%- endif %}
+                {%- for link in site.links %}
+                <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+                {%- endfor %}
+            </ul>
+            {%- if site.photo_credit and site.photo_credit.label %}
+            <p id="photoc"><a href="{{ site.photo_credit.url }}">{{ site.photo_credit.label }}</a></p>
+            {%- endif %}
+        </section>
+    </div>
+{{ ui.featuredBook(featured, site.featured_label) }}
+{{ ui.heading("Recent Media") }}
+    <div class="recentmedia">
+        {%- for item in media %}{% if item.home %}{{ ui.mediaItem(item) }}{% endif %}{% endfor %}
+    </div>

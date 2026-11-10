@@ -1,0 +1,15 @@
+{
+  "name": "dr-cas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0"
+  }
+}

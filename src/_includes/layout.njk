@@ -1,12 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="Description" content="Page not found — Dr. Carlos Alberto Sánchez’s website.">
+    <meta name="Description" content="{{ description }}">
     <meta name="Author" content="Brady J. Frey">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" name="image" content="https://www.drcarlosalbertosanchez.com/images/drcasogimage.jpg">
-<title>Dr. Carlos Alberto Sánchez's Error page!</title>
+{%- if ogTitle %}
+    <meta property="og:title" content="{{ ogTitle }}">
+    <meta property="og:description" content="{{ ogDescription or description }}">
+{%- endif %}
+    <title>{{ title }}</title>
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon96.png">
@@ -18,37 +22,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7216232/7121832/css/fonts.css">
 </head>
-<body id="writing" class="publicphilo">
+<body{% if bodyId %} id="{{ bodyId }}"{% endif %}{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
     <header>
         <nav class="top-nav">
-            <div class="homel"><a id="current" href="index.html">Home</a></div>
+            <div class="homel"><a{% if current == "home" %} id="current"{% endif %} href="index.html">Home</a></div>
             <input id="menu-toggle" type="checkbox">
             <label class="menu-button-container" for="menu-toggle">
                 <div class="menu-button"></div>
             </label>
             <ul class="menu">
-                <li><a href="books.html">Books</a></li>
-                <li><a href="academicwriting.html">Academic Writing</a></li>
-                <li><a href="publicphilosophy.html">Public Philosophy</a></li>
-                <li><a href="cv.html">CV</a></li>
+                <li><a{% if current == "books" %} id="current"{% endif %} href="books.html">Books</a></li>
+                <li><a{% if current == "academic" %} id="current"{% endif %} href="academicwriting.html">Academic Writing</a></li>
+                <li><a{% if current == "public" %} id="current"{% endif %} href="publicphilosophy.html">Public Philosophy</a></li>
+                <li><a{% if current == "cv" %} id="current"{% endif %} href="cv.html">CV</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-    <div class="poster">
-    	<section>
-            <h2 class="error">Whoops! This is not what you were looking for!</h2>
-            <p>You've landed on a page that doesn't seem to exist on this website. If you think this was a mistake, email me below or view my other pages:</p>
-            <ul>
-                <li>Email me: <a href="mailto:carlos.sanchez@sjsu.edu">carlos.sanchez@sjsu.edu</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="academicwriting.html">Academic Writing</a></li>
-                <li><a href="publicphilosophy.html">Public Philosophy</a></li>
-                <li><a href="cv.html">CV</a></li>
-            </ul>
-         </section>
-    </div>
+{{ content | safe }}
     </main>
 
     <footer>
